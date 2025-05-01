@@ -1,6 +1,5 @@
 import React from 'react';
 import { TechPulseDivider } from '../TechPulseDivider';
-import AnimatedCatCard from '../AnimatedCatCard';
 import  ArtDecoDivider  from '../ArtDecoDivider';
 
 export default function HomePage({ darkMode, onNavigate }) {
