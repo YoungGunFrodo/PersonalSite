@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import HomePage from './components/Homepage/HomePage';
-import DigitalProjects from './components/projectsections/DigitalProjects';
-import PhysicalProjects from './components/projectsections/PhysicalProjects';
-import HobbyProjects    from './components/projectsections/HobbyProjects';
+import DigitalProjects from './components/projectSections/DigitalProjects';
+import PhysicalProjects from './components/projectSections/PhysicalProjects';
+import HobbyProjects    from './components/projectSections/HobbyProjects';
 import ContactPage from './components/ContactPage';
 
 
