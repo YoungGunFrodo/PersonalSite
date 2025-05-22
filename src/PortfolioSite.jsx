@@ -5,12 +5,14 @@ import DigitalProjects from './components/ProjectSections/DigitalProjects';
 import PhysicalProjects from './components/ProjectSections/PhysicalProjects';
 import HobbyProjects    from './components/ProjectSections/HobbyProjects';
 import ContactPage from './components/ContactPage';
+import LongTermProjects from './components/ProjectSections/LongTermProjects';
 
 
 export default function PortfolioSite() {
   const [section, setSection] = useState('home');
   const [darkMode, setDarkMode] = useState(false);
   const [showSARAModal, setShowSARAModal] = useState(false);
+  const toggleDarkMode = () => setDarkMode(dm => !dm);
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -54,12 +56,13 @@ export default function PortfolioSite() {
         </nav>
       </header>
 
-      {section === 'home' && (
-        <HomePage
-          darkMode={darkMode}
-           onNavigate={(to) => setSection(to)}
-         />
-     )}
+       {section === 'home' && (
+     <HomePage
+       darkMode={darkMode}
+       setDarkMode={setDarkMode}
+       onNavigate={(to) => setSection(to)}
+     />
+   )}
 
       {section === 'resume' && (
         <Section>
@@ -189,6 +192,8 @@ export default function PortfolioSite() {
       <PhysicalProjects  darkMode={darkMode} />
       <hr className="my-8 border-gray-200 dark:border-gray-700" />
       <HobbyProjects     darkMode={darkMode} />
+      <hr className="my-8 border-gray-200 dark:border-gray-700" />
+      <LongTermProjects darkMode={darkMode} />
   </Section>
 )}
       {section === 'contact' && (
@@ -203,3 +208,4 @@ export default function PortfolioSite() {
   );
   
   }
+ 

@@ -1,8 +1,11 @@
+// src/components/Homepage/HomePage.jsx
 import React from 'react';
 import { TechPulseDivider } from '../TechPulseDivider';
-import  ArtDecoDivider  from '../ArtDecoDivider';
+import AnimatedCatCard from '../AnimatedCatCard';
+import ArtDecoDivider from '../ArtDecoDivider';
+import clsx from 'clsx';
 
-export default function HomePage({ darkMode, onNavigate }) {
+export default function HomePage({ darkMode, setDarkMode, onNavigate }) {
   return (
     <section className="space-y-16">
       {/* Hero */}
@@ -15,19 +18,42 @@ export default function HomePage({ darkMode, onNavigate }) {
       </div>
 
       {/* About Me */}
-      <div className="py-16 max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6">About Me</h2>
-        <p className="mb-4">
-          I’m a security analyst by day and a tinkerer by night. I like to build practical
-          projects both digital and physical, research and collaborate with others,
-           and someday create a small, self-sustaining town
-          straight out of a Studio Ghibli film.
-        </p>
-        <p>
-          Whether I’m writing Python scripts to automate threat checks or swinging a
-          hammer on an A-frame cottage, my goal is always the same: blend practical
-          infrastructure with a touch of magic.
-        </p>
+      <div
+        className={clsx(
+          'relative py-16 bg-cover bg-center text-gray-900 dark:text-white',
+          darkMode
+            ? "bg-[url('/images/about-night.png')]"
+            : "bg-[url('/images/about-day.png')]"
+        )}
+      >
+        {/* overlay for contrast */}
+        <div className="absolute inset-0 bg-white/50 dark:bg-black/50" />
+        <div className="relative max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-6">About Me</h2>
+          <p className="mb-4 text-base leading-relaxed">
+            I’m a security analyst by{' '}
+            <button
+              className="font-semibold underline cursor-pointer"
+              onClick={() => setDarkMode(false)}
+            >
+              day
+            </button>{' '}
+            and a tinkerer by{' '}
+            <button
+              className="font-semibold underline cursor-pointer"
+              onClick={() => setDarkMode(true)}
+            >
+              night
+            </button>
+            . I like to build practical projects both digital and physical, research
+            and collaborate with others…
+          </p>
+          <p className="text-base leading-relaxed">
+            Whether I’m writing Python scripts to automate threat checks or swinging a
+            hammer on an A-frame cottage, my goal is always the same: blend practical
+            infrastructure with a touch of magic.
+          </p>
+        </div>
       </div>
 
       {/* Collaborate */}
@@ -55,7 +81,7 @@ export default function HomePage({ darkMode, onNavigate }) {
           </li>
         </ul>
         <div className="text-center mt-8">
-        <button
+          <button
             onClick={() => onNavigate?.('contact')}
             className="inline-block px-6 py-3 bg-blue-600 text-white rounded shadow hover:bg-blue-700"
           >
@@ -72,27 +98,29 @@ export default function HomePage({ darkMode, onNavigate }) {
             <h3 className="font-semibold mb-1">🏡 Small Town Design</h3>
             <p className="text-sm">
               Collaborating and designing plans for building a small community incorporating
-              both nature and modern technology. I am always looking for new collaborators. 
+              both nature and modern technology. I am always looking for new collaborators.
             </p>
           </div>
           <div>
             <h3 className="font-semibold mb-1">🎧 Music and Concerts</h3>
             <p className="text-sm">
-              I am always listening to new music of all genres. I love 
-              going to concerts to support new artists.
+              I am always listening to new music of all genres. I love going to concerts to
+              support new artists.
             </p>
           </div>
           <div>
             <h3 className="font-semibold mb-1">📚 TTRPGs with Friends</h3>
             <p className="text-sm">
               One of my favorite group passtimes, and campaigns are regularly done virtually.
-              Interested in meeting the group or sitting in on a session? Reach out and introduce yourself!
+              Interested in meeting the group or sitting in on a session? Reach out and
+              introduce yourself!
             </p>
           </div>
           <div>
             <h3 className="font-semibold mb-1">🏕️ Camping and Floating</h3>
             <p className="text-sm">
-              On the rare occassion I can find time, a trip down a river or a night camping is the best for destressing. 
+              On the rare occasion I can find time, a trip down a river or a night camping
+              is the best for de-stressing.
             </p>
           </div>
         </div>
