@@ -1,18 +1,15 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import HomePage from './components/Homepage/HomePage';
 import DigitalProjects from './components/ProjectSections/DigitalProjects';
 import PhysicalProjects from './components/ProjectSections/PhysicalProjects';
-import HobbyProjects    from './components/ProjectSections/HobbyProjects';
+import HobbyProjects from './components/ProjectSections/HobbyProjects';
 import ContactPage from './components/ContactPage';
-
-
 
 export default function PortfolioSite() {
   const [section, setSection] = useState('home');
   const [darkMode, setDarkMode] = useState(false);
-  const [showSARAModal, setShowSARAModal] = useState(false);
-  const toggleDarkMode = () => setDarkMode(dm => !dm);
+
 
   const navItems = [
     { id: 'home', label: 'Home' },
