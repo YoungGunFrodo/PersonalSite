@@ -5,7 +5,7 @@ import DigitalProjects from './components/ProjectSections/DigitalProjects';
 import PhysicalProjects from './components/ProjectSections/PhysicalProjects';
 import HobbyProjects    from './components/ProjectSections/HobbyProjects';
 import ContactPage from './components/ContactPage';
-import LongTermProjects from './components/ProjectSections/LongTermProjects';
+
 
 
 export default function PortfolioSite() {
