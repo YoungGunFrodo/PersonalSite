@@ -202,6 +202,4 @@ export default function PortfolioSite() {
     </div>
     </div>
   );
-  
   }
- 
