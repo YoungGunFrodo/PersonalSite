@@ -192,8 +192,7 @@ export default function PortfolioSite() {
       <PhysicalProjects  darkMode={darkMode} />
       <hr className="my-8 border-gray-200 dark:border-gray-700" />
       <HobbyProjects     darkMode={darkMode} />
-      <hr className="my-8 border-gray-200 dark:border-gray-700" />
-      <LongTermProjects darkMode={darkMode} />
+
   </Section>
 )}
       {section === 'contact' && (
